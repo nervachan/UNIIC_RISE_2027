@@ -1,0 +1,4 @@
+<script setup lang="ts">
+const announcements=[['Registration','Registration opening announcement','Details for participant registration and submission opening.'],['Program','Three-day program now available','Review the complete Manila and Cordillera event schedule.'],['Travel','Travel and accommodation guidance','Information for delegation transport and suggested hotels.']]
+</script>
+<template><section class="page-hero"><div class="container"><span class="kicker light">ANNOUNCEMENTS</span><h1>Stay current. Stay connected.</h1></div></section><section class="content-section"><div class="container"><article v-for="item in announcements" :key="item[1]" class="feature-card" style="margin-bottom:12px"><span class="kicker">{{item[0]}}</span><h3>{{item[1]}}</h3><p>{{item[2]}}</p></article></div></section></template>
