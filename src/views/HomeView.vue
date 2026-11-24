@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { ArrowRight, ArrowUpRight, Microscope, Trophy, Lightbulb, Users, Presentation, Network, UtensilsCrossed, Route, CalendarDays, MapPin } from 'lucide-vue-next'
+import adamsonLogo from '../assets/Adamson_Logo.png'
+import dostLogo from '../assets/DOST_logo.webp'
+import ucLogo from '../assets/UC_Logo.png'
 
 const highlights = [
   { icon: Presentation, title: 'Research-to-Impact Presentations', text: 'Move promising findings toward practical, measurable solutions.', link: '/event-components' },
@@ -49,7 +52,7 @@ const pipeline = ['Research','Problem validation','Solution','Prototype','Busine
     <article class="day-card"><div class="day-number">03</div><span>APRIL 28 · HIGHLANDS</span><h3>Experience &amp; Explore</h3><p>Awards, summit closing and the Baguio–Benguet Innovation Crawl.</p><div class="day-venue">Baguio &amp; Benguet</div></article>
   </div></div></section>
 
-  <section class="section hosts"><div class="container"><div class="section-heading"><span class="kicker">HOST INSTITUTIONS</span><h2>One shared vision.</h2></div><div class="host-grid"><article><div class="host-monogram uc">UC</div><div><h3>University of the Cordilleras</h3><p>Baguio City, Philippines</p></div></article><article><div class="host-monogram ad">AdU</div><div><h3>Adamson University</h3><p>Manila, Philippines</p></div></article><article><div class="host-monogram car">DOST</div><div><h3>DOST–CAR</h3><p>Philippines</p></div></article></div></div></section>
+  <section class="section hosts"><div class="container"><div class="section-heading"><span class="kicker">HOST INSTITUTIONS</span><h2>One shared vision.</h2></div><div class="host-grid"><article><img class="host-logo" :src="ucLogo" alt="University of the Cordilleras logo" /><div><h3>University of the Cordilleras</h3><p>Baguio City, Philippines</p></div></article><article><img class="host-logo" :src="adamsonLogo" alt="Adamson University logo" /><div><h3>Adamson University</h3><p>Manila, Philippines</p></div></article><article><img class="host-logo" :src="dostLogo" alt="DOST–CAR logo" /><div><h3>DOST–CAR</h3><p>Philippines</p></div></article></div></div></section>
 
   <section class="cta-section"><div class="cta-grid"></div><div class="container cta-inner"><span class="kicker light">YOUR NEXT VENTURE STARTS HERE</span><h2>Your research could become<br />the next big innovation.</h2><div><RouterLink class="button gold" to="/register">Register for the Summit</RouterLink><RouterLink class="button outline-light" to="/submissions/research">Submit Your Research</RouterLink><RouterLink class="button text-light" to="/submissions/startup">Join the Startup Competition <ArrowRight /></RouterLink></div></div></section>
 </template>
