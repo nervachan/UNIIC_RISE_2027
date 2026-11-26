@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, Microscope, Trophy, Lightbulb, Users, Present
 import adamsonLogo from '../assets/Adamson_Logo.png'
 import dostLogo from '../assets/DOST_logo.webp'
 import ucLogo from '../assets/UC_Logo.png'
+import { partners } from '../data/partners'
 
 const highlights = [
   { icon: Presentation, title: 'Research-to-Impact Presentations', text: 'Move promising findings toward practical, measurable solutions.', link: '/event-components' },
@@ -64,6 +65,8 @@ function moveInnovationLight(event: MouseEvent) {
   </div></div></section>
 
   <section class="section hosts"><div class="container"><div class="section-heading"><span class="kicker">HOST INSTITUTIONS</span><h2>One shared vision.</h2></div><div class="host-grid"><article><img class="host-logo" :src="ucLogo" alt="University of the Cordilleras logo" /><div><h3>University of the Cordilleras</h3><p>Baguio City, Philippines</p></div></article><article><img class="host-logo" :src="adamsonLogo" alt="Adamson University logo" /><div><h3>Adamson University</h3><p>Manila, Philippines</p></div></article><article><img class="host-logo" :src="dostLogo" alt="DOST–CAR logo" /><div><h3>DOST–CAR</h3><p>Philippines</p></div></article></div></div></section>
+
+  <section class="section partners-section"><div class="container"><div class="section-heading"><span class="kicker">OUR PARTNERS</span><h2>Innovation across borders.</h2><p>Working together to turn knowledge into sustainable impact.</p></div><div class="partner-grid"><article v-for="partner in partners" :key="partner.name" class="partner-card"><img :src="partner.logo" :alt="`${partner.name} logo`" /><h3>{{ partner.name }}</h3></article></div></div></section>
 
   <section class="cta-section"><div class="cta-grid"></div><div class="container cta-inner"><span class="kicker light">YOUR NEXT VENTURE STARTS HERE</span><h2>Your research could become<br />the next big innovation.</h2><div><a class="button gold" href="https://docs.google.com/forms/d/e/1FAIpQLSdsWrFh4gs-pbSWvJy3fJuvEgBxh4pSn588ByAEA3sY0l6_gw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Register for the Summit</a></div></div></section>
 </template>

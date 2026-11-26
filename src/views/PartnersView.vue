@@ -1,1 +1,21 @@
-<template><section class="page-hero"><div class="container"><span class="kicker light">INSTITUTIONAL PARTNERS</span><h1>Built through collaboration.</h1><p>Official partner information will be published after confirmation.</p></div></section><section class="content-section"><div class="container host-grid"><article><div class="host-monogram uc">UC</div><div><h3>University of the Cordilleras</h3><p>Host institution</p></div></article><article><div class="host-monogram ad">AdU</div><div><h3>Adamson University</h3><p>Host institution</p></div></article><article><div class="host-monogram car">DOST</div><div><h3>DOST–CAR</h3><p>Host institution</p></div></article></div></section></template>
+<script setup lang="ts">
+import { partners } from '../data/partners'
+</script>
+
+<template>
+  <section class="page-hero">
+    <div class="container">
+      <span class="kicker light">INSTITUTIONAL PARTNERS</span>
+      <h1>Built through collaboration.</h1>
+      <p>Meet the universities and organizations working together to advance innovation and sustainable impact.</p>
+    </div>
+  </section>
+  <section class="content-section partners-section">
+    <div class="container partner-grid">
+      <article v-for="partner in partners" :key="partner.name" class="partner-card">
+        <img :src="partner.logo" :alt="`${partner.name} logo`" />
+        <h2>{{ partner.name }}</h2>
+      </article>
+    </div>
+  </section>
+</template>

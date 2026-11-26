@@ -6,7 +6,7 @@ import { Menu, X, ArrowUpRight, CalendarDays, MapPin, Mail, Instagram, Linkedin 
 const route = useRoute()
 const mobileOpen = ref(false)
 const nav: Array<[string, string]> = [
-  ['About', '/about'], ['Event Components', '/event-components'], ['Program', '/program'],
+  ['About', '/about'], ['Event Components', '/event-components'], ['Program', '/program'], ['Partners', '/partners'],
   ['People', '/speakers'], ['Innovation Crawl', '/innovation-crawl'],
   ['Announcements', '/announcements'], ['Contact', '/contact']
 ]
@@ -42,7 +42,7 @@ const nav: Array<[string, string]> = [
           <p>From Research to Venture: Co-Creating Scalable Solutions for Sustainable Impact.</p>
           <div class="socials"><a href="#" aria-label="Instagram"><Instagram :size="18" /></a><a href="#" aria-label="LinkedIn"><Linkedin :size="18" /></a><a href="mailto:rise2027@uniic.org" aria-label="Email"><Mail :size="18" /></a></div>
         </div>
-        <div><h3>Explore</h3><RouterLink to="/about">About the Summit</RouterLink><RouterLink to="/event-components">Event Components</RouterLink><RouterLink to="/program">Program</RouterLink><RouterLink to="/awards">Awards</RouterLink></div>
+        <div><h3>Explore</h3><RouterLink to="/about">About the Summit</RouterLink><RouterLink to="/event-components">Event Components</RouterLink><RouterLink to="/program">Program</RouterLink><RouterLink to="/partners">Partners</RouterLink><RouterLink to="/awards">Awards</RouterLink></div>
         <div><h3>Participate</h3><a href="https://docs.google.com/forms/d/e/1FAIpQLSdsWrFh4gs-pbSWvJy3fJuvEgBxh4pSn588ByAEA3sY0l6_gw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Register</a><RouterLink to="/venue-travel">Venue & Travel</RouterLink></div>
         <div><h3>Event</h3><p class="footer-line"><CalendarDays :size="17" /> April 26–28, 2027</p><p class="footer-line"><MapPin :size="17" /> Manila & Baguio City</p><p class="footer-line"><Mail :size="17" /> rise2027@uniic.org</p></div>
       </div>
