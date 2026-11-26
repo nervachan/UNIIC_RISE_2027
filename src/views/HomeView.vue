@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { ArrowRight, ArrowUpRight, Microscope, Trophy, Lightbulb, Users, Presentation, Network, UtensilsCrossed, Route, CalendarDays, MapPin } from 'lucide-vue-next'
 import adamsonLogo from '../assets/Adamson_Logo.png'
@@ -14,10 +15,19 @@ const highlights = [
   { icon: UtensilsCrossed, title: 'Delegation Fellowship', text: 'Build lasting collaborations through a Cordillera-hosted dinner.', link: '/program' },
 ]
 const pipeline = ['Research','Problem validation','Solution','Prototype','Business model','Startup','Incubation','Impact']
+
+const hero = ref<HTMLElement | null>(null)
+
+function moveInnovationLight(event: MouseEvent) {
+  if (!hero.value) return
+  const bounds = hero.value.getBoundingClientRect()
+  hero.value.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`)
+  hero.value.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`)
+}
 </script>
 
 <template>
-  <section class="hero">
+  <section ref="hero" class="hero" @mousemove="moveInnovationLight">
     <div class="hero-grid"></div>
     <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
     <div class="container hero-inner">
@@ -27,7 +37,8 @@ const pipeline = ['Research','Problem validation','Solution','Prototype','Busine
         <p class="hero-subtitle">Research-to-Startup<br />Impact Summit &amp; Ideation Sprint</p>
         <p class="hero-theme">“From Research to Venture: Co-Creating Scalable Solutions for Sustainable Impact”</p>
         <p class="tagline">Discover. Transform. Venture. Impact.</p>
-        <div class="hero-actions"><RouterLink class="button primary" to="/register">Register Now <ArrowUpRight :size="18" /></RouterLink><RouterLink class="button ghost" to="/submissions">Submit Research / Startup</RouterLink></div>
+        <div class="innovation-status"><span class="signal"></span><span>Innovation in motion</span><strong>2027</strong></div>
+        <div class="hero-actions"><a class="button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdsWrFh4gs-pbSWvJy3fJuvEgBxh4pSn588ByAEA3sY0l6_gw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Register Now <ArrowUpRight :size="18" /></a></div>
       </div>
       <div class="hero-visual" aria-label="Innovation journey graphic">
         <div class="core-ring"><div class="core"><span>2027</span><small>RISE</small></div></div>
@@ -54,5 +65,5 @@ const pipeline = ['Research','Problem validation','Solution','Prototype','Busine
 
   <section class="section hosts"><div class="container"><div class="section-heading"><span class="kicker">HOST INSTITUTIONS</span><h2>One shared vision.</h2></div><div class="host-grid"><article><img class="host-logo" :src="ucLogo" alt="University of the Cordilleras logo" /><div><h3>University of the Cordilleras</h3><p>Baguio City, Philippines</p></div></article><article><img class="host-logo" :src="adamsonLogo" alt="Adamson University logo" /><div><h3>Adamson University</h3><p>Manila, Philippines</p></div></article><article><img class="host-logo" :src="dostLogo" alt="DOST–CAR logo" /><div><h3>DOST–CAR</h3><p>Philippines</p></div></article></div></div></section>
 
-  <section class="cta-section"><div class="cta-grid"></div><div class="container cta-inner"><span class="kicker light">YOUR NEXT VENTURE STARTS HERE</span><h2>Your research could become<br />the next big innovation.</h2><div><RouterLink class="button gold" to="/register">Register for the Summit</RouterLink><RouterLink class="button outline-light" to="/submissions/research">Submit Your Research</RouterLink><RouterLink class="button text-light" to="/submissions/startup">Join the Startup Competition <ArrowRight /></RouterLink></div></div></section>
+  <section class="cta-section"><div class="cta-grid"></div><div class="container cta-inner"><span class="kicker light">YOUR NEXT VENTURE STARTS HERE</span><h2>Your research could become<br />the next big innovation.</h2><div><a class="button gold" href="https://docs.google.com/forms/d/e/1FAIpQLSdsWrFh4gs-pbSWvJy3fJuvEgBxh4pSn588ByAEA3sY0l6_gw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Register for the Summit</a></div></div></section>
 </template>
